@@ -4,17 +4,17 @@
 // $ns = $config['slm_namespace'];
 
 $widget_config = array (
-    'key' => 'widget_quiz',
+    'key' => 'widget_poll',
     // The 'name' will define the directory that the parent theme looks
     // for our plugin template in. e.g. views/widgets/quiz_plugin/template.twig.
-    'name' => 'quiz_plugin',
-    'label' => 'Quiz',
+    'name' => 'poll_plugin',
+    'label' => 'Poll',
     'display' => 'block',
     'sub_fields' => array (
         array (
-            'key' => 'widget_quiz_quiz_post',
-            'label' => 'Select a Quiz',
-            'name' => 'quiz_post',
+            'key' => 'widget_poll_poll_post',
+            'label' => 'Select a Poll',
+            'name' => 'poll_post',
             'prefix' => '',
             'type' => 'post_object',
             'instructions' => '',
@@ -26,7 +26,7 @@ $widget_config = array (
                 'id' => '',
             ),
             'post_type' => array (
-                0 => 'quiz',
+                0 => 'poll',
             ),
             'taxonomy' => '',
             'allow_null' => 0,
