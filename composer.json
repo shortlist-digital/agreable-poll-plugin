@@ -9,7 +9,8 @@
     }
   ],
   "require": {
-    "getherbert/framework": "dev-dev"
+    "getherbert/framework": "dev-dev",
+    "ktamas77/firebase-php": "dev-master"
   },
   "config": {
     "preferred-install": "dist"

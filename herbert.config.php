@@ -14,8 +14,7 @@ return [
     'requires' => [
         __DIR__ . '/app/customPostTypes.php',
         __DIR__ . '/app/custom-fields/post-type-fields.php',
-        __DIR__ . '/app/hooks/timber_loader_paths.php',
-        __DIR__ . '/app/hooks/slm_plugin_enqueue.php'
+         __DIR__ . '/app/hooks.php',
     ],
 
     /**
