@@ -3,7 +3,7 @@
 use SLM_PollPlugin\Helper;
 // The helper cannot be used at the moment if more than one Herbetr plugin is present.
 // $ns = Helper::get('slm_namespace');
-$ns = 'slm_quiz';
+$ns = 'slm_poll';
 
 /*
  * Although we're in the Herbert panel file, we're not using any built in
@@ -14,12 +14,12 @@ $ns = 'slm_quiz';
 
 acf_add_options_sub_page(array(
   'page_title'  => 'Style Settings',
-  'menu_title'  => 'Quiz Settings',
-  'parent_slug' => 'edit.php?post_type=quiz',
+  'menu_title'  => 'Poll Settings',
+  'parent_slug' => 'edit.php?post_type=poll',
 ));
 
 // Constructed using (lowercased and hyphenated) 'menu_title' from above.
-$options_page_name = 'acf-options-quiz-settings';
+$options_page_name = 'acf-options-poll-settings';
 
 if( function_exists('register_field_group') ):
 
@@ -100,6 +100,28 @@ register_field_group(array (
       'maxlength' => '',
       'rows' => '',
       'new_lines' => 'wpautop',
+      'readonly' => 0,
+      'disabled' => 0,
+    ),
+    array (
+      'key' => $ns.'_plugin_field_'.$ns.'_senti_user_id',
+      'label' => 'Senti User ID',
+      'name' => $ns.'_plugin_settings_senti_user_id',
+      'prefix' => '',
+      'type' => 'text',
+      'instructions' => 'Generate by creating a Senti user account (https://senti.firebaseapp.com). For example \'simplelogin:22\'.',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      'maxlength' => '',
       'readonly' => 0,
       'disabled' => 0,
     ),

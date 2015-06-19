@@ -78,6 +78,28 @@ register_field_group(array (
         ),
       ),
     ),
+    array (
+      'key' => 'slm_poll_definition_firebase_id',
+      'label' => 'Firebase ID',
+      'name' => 'firebase_id',
+      'prefix' => '',
+      'type' => 'text',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      'maxlength' => '',
+      'readonly' => 1,
+      'disabled' => 0,
+    ),
   ),
   'location' => array (
       array (
