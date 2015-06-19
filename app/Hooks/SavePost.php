@@ -14,7 +14,7 @@ class SavePost {
 
     $post = get_post( $postId );
     $path = 'polls';
-    $userId = 'simplelogin:22';
+    $userId = get_field('slm_poll_plugin_settings_senti_user_id', 'options');
     $secret = '0OfyumxYuH4nTWqKjW5oPmfhaXqAYMZnHB9AVqam';
     $firebase = new \Firebase\FirebaseLib('https://senti.firebaseio.com/', $secret);
 
@@ -28,7 +28,7 @@ class SavePost {
     // Empty poll obj.
     $poll = array(
       'question'  => $acf['slm_poll_definition_question'],
-      'userId'    => 'custom:1',
+      'userId'    => $userId,
       'answers'   => array(
         // array('text' => '', 'votes' => 0),
       )
