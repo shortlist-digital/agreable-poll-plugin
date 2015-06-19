@@ -2,9 +2,9 @@
 
 /**
  * @wordpress-plugin
- * Plugin Name:       SLM Quiz Plugin
+ * Plugin Name:       SLM Poll Plugin
  * Plugin URI:        http://shortlistmedia.co.uk
- * Description:       Created custom quizes.
+ * Description:       Create custom polls.
  * Version:           0.1.0
  * Author:            Shortlist Media
  * Author URI:        http://shortlistmedia.co.uk
