@@ -1,6 +1,7 @@
 <?php namespace SLM_QuizPlugin;
 
 use SLM_QuizPlugin\Helper;
+// The helper cannot be used at the moment if more than one Herbetr plugin is present.
 // $ns = Helper::get('slm_namespace');
 $ns = 'slm_quiz';
 
