@@ -1,0 +1,23 @@
+{
+  "name": "getherbert/herbert-plugin",
+  "description": "Herbert plugin",
+  "license": "MIT",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/getherbert/framework"
+    }
+  ],
+  "require": {
+    "getherbert/framework": "dev-dev"
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "SLM_QuizPlugin\\": "app/"
+    }
+  }
+}
