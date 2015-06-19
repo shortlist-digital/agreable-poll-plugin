@@ -2,7 +2,7 @@
 
 /** @var  \Herbert\Framework\Application $container */
 
-use SLM_QuizPlugin\Controllers\RenderController;
+use SLM_PollPlugin\Controllers\RenderController;
 
 function enqueue(){
   $r = new RenderController();

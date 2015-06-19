@@ -2,7 +2,7 @@
 
 /** @var  \Herbert\Framework\Application $container */
 
-use SLM_QuizPlugin\Helper;
+use SLM_PollPlugin\Helper;
 
 /*
  * We want Timber to render our plugin templates so we need to

@@ -57,21 +57,21 @@ return [
      * The routes to auto-load.
      */
     'routes' => [
-        // 'SLM_QuizPlugin' => __DIR__ . '/app/routes.php'
+        // 'SLM_PollPlugin' => __DIR__ . '/app/routes.php'
     ],
 
     /**
      * The panels to auto-load.
      */
     'panels' => [
-        'SLM_QuizPlugin' => __DIR__ . '/app/panels.php'
+        'SLM_PollPlugin' => __DIR__ . '/app/panels.php'
     ],
 
     /**
      * The APIs to auto-load.
      */
     'apis' => [
-        // 'SLM_QuizPlugin' => __DIR__ . '/app/api.php'
+        // 'SLM_PollPlugin' => __DIR__ . '/app/api.php'
     ],
 
     /**
@@ -82,7 +82,7 @@ return [
      * when rendering a view in twig.
      */
     'views' => [
-        'SLM_QuizPlugin' => __DIR__ . '/resources/views'
+        'SLM_PollPlugin' => __DIR__ . '/resources/views'
     ],
 
     /**

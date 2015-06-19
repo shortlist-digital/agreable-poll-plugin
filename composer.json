@@ -17,7 +17,7 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "SLM_QuizPlugin\\": "app/"
+      "SLM_PollPlugin\\": "app/"
     }
   }
 }
