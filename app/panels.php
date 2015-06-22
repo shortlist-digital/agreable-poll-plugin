@@ -27,7 +27,7 @@ register_field_group(array (
   'title' => 'Display Settings',
   'fields' => array (
     array (
-      'key' => $ns.'_plugin_field_'.$ns.'_primary_color',
+      'key' => $ns.'_plugin_field_settings_property_primary_color',
       'label' => 'Primary Colour',
       'name' => $ns.'_plugin_settings_property_primary_colour',
       'prefix' => '',
@@ -43,7 +43,7 @@ register_field_group(array (
       'default_value' => '#ff00ff',
     ),
     array (
-      'key' => $ns.'_plugin_field_'.$ns.'_secondary_plugin',
+      'key' => $ns.'_plugin_field_settings_property_secondary_colour',
       'label' => 'Secondary Colour',
       'name' => $ns.'_plugin_settings_property_secondary_colour',
       'prefix' => '',
@@ -59,7 +59,7 @@ register_field_group(array (
       'default_value' => '#ffffff',
     ),
     array (
-      'key' => $ns.'_plugin_field_'.$ns.'_font_family',
+      'key' => $ns.'_plugin_field_settings_property_font_family',
       'label' => 'Font Family',
       'name' => $ns.'_plugin_settings_property_font_family',
       'prefix' => '',
@@ -81,7 +81,7 @@ register_field_group(array (
       'disabled' => 0,
     ),
     array (
-      'key' => $ns.'_plugin_field_'.$ns.'_extra_css',
+      'key' => $ns.'_plugin_field_settings_free_text_css',
       'label' => 'Extra CSS',
       'name' => $ns.'_plugin_settings_free_text_css',
       'prefix' => '',
@@ -103,12 +103,34 @@ register_field_group(array (
       'disabled' => 0,
     ),
     array (
-      'key' => $ns.'_plugin_field_'.$ns.'_senti_user_id',
+      'key' => $ns.'_plugin_field_settings_senti_user_id',
       'label' => 'Senti User ID',
       'name' => $ns.'_plugin_settings_senti_user_id',
       'prefix' => '',
       'type' => 'text',
       'instructions' => 'Generate by creating a Senti user account (https://senti.firebaseapp.com). For example \'simplelogin:22\'.',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      'maxlength' => '',
+      'readonly' => 0,
+      'disabled' => 0,
+    ),
+    array (
+      'key' => $ns.'_plugin_field_settings_firebase_secret',
+      'label' => 'Senti / Firebase Secret Key',
+      'name' => $ns.'_plugin_settings_firebase_secret',
+      'prefix' => '',
+      'type' => 'text',
+      'instructions' => 'Available here: <a href="https://senti.firebaseio.com/?page=Admin">https://senti.firebaseio.com/?page=Admin</a>',
       'required' => 0,
       'conditional_logic' => 0,
       'wrapper' => array (
