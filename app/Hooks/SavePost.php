@@ -1,6 +1,4 @@
-<?php
-
-namespace SLM_PollPlugin\Hooks;
+<?php namespace SLM_PollPlugin\Hooks;
 
 use SLM_PollPlugin\Helper;
 
@@ -13,16 +11,16 @@ class SavePost {
   public function savePost( $postId ){
 
     $post = get_post( $postId );
-    $path = 'polls';
-    $userId = get_field('slm_poll_plugin_settings_senti_user_id', 'options');
-    $secret = '0OfyumxYuH4nTWqKjW5oPmfhaXqAYMZnHB9AVqam';
-    $firebase = new \Firebase\FirebaseLib('https://senti.firebaseio.com/', $secret);
-
     if($post->post_type !== 'poll' ||
       isset($_POST['acf']) === false ){
       return;
     }
 
+    $userId = get_field('slm_poll_plugin_settings_senti_user_id', 'options');
+    $secret = get_field('slm_poll_plugin_settings_firebase_secret', 'options');
+    $firebase = new \Firebase\FirebaseLib('https://senti.firebaseio.com/', $secret);
+
+    $path = 'polls';
     $acf = $_POST['acf'];
 
     // Empty poll obj.
