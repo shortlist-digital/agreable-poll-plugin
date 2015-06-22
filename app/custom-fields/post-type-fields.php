@@ -14,28 +14,6 @@ register_field_group(array (
   'title' => 'Poll Definition',
   'fields' => array (
     array (
-      'key' => 'slm_poll_definition_question',
-      'label' => 'Question',
-      'name' => 'poll_question',
-      'prefix' => '',
-      'type' => 'text',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'default_value' => '',
-      'placeholder' => '',
-      'prepend' => '',
-      'append' => '',
-      'maxlength' => '',
-      'readonly' => 0,
-      'disabled' => 0,
-    ),
-    array (
       'key' => 'slm_poll_definition_answers',
       'label' => 'Answers',
       'name' => 'poll_answers',
