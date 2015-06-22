@@ -5,6 +5,7 @@ use SLM_PollPlugin\Helper;
 class SavePost {
 
   public function init() {
+    // Priority  of 20 means post will have already been saved.
     \add_action('acf/save_post', array($this, 'savePost'), 20);
   }
 
@@ -16,6 +17,7 @@ class SavePost {
       return;
     }
 
+    //Both user and secret set in the WP settings.
     $userId = get_field('slm_poll_plugin_settings_senti_user_id', 'options');
     $secret = get_field('slm_poll_plugin_settings_firebase_secret', 'options');
     $firebase = new \Firebase\FirebaseLib('https://senti.firebaseio.com/', $secret);
@@ -23,29 +25,30 @@ class SavePost {
     $path = 'polls';
     $acf = $_POST['acf'];
 
+
     // Empty poll obj.
     $poll = array(
-      'question'  => $acf['slm_poll_definition_question'],
+      'question'  => html_entity_decode(get_the_title($postId), ENT_QUOTES, 'UTF-8'),
       'userId'    => $userId,
       'answers'   => array(
         // array('text' => '', 'votes' => 0),
       )
     );
 
+    $answers = get_field('slm_poll_definition_answers', $postId);
     // Loop through answers in ACF.
-    foreach($acf['slm_poll_definition_answers'] as $acfAnswer){
+    foreach($answers as $answer){
       array_push($poll['answers'], array(
-        'text' => $acfAnswer['slm_poll_definition_answers_answer_text'],
+        'text' => $answer,
         'shareText' => ''
       ));
     }
 
+    $firebasePollId = get_field('slm_poll_definition_firebase_id', $postId);
     // Update or insert based on presence of firebase_id.
-    if( isset($acf['slm_poll_definition_firebase_id']) &&
-      empty($acf['slm_poll_definition_firebase_id']) === false){
+    if( empty($firebasePollId) === false ){
       // Update.
-      $firebaseId = $acf['slm_poll_definition_firebase_id'];
-      $return = $firebase->update($path.'/'.$userId.'/'.$firebaseId, $poll);
+      $return = $firebase->update($path.'/'.$userId.'/'.$firebasePollId, $poll);
     } else {
       // Insert.
       $poll['entries'] = 0;
