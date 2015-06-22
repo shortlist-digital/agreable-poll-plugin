@@ -80,16 +80,17 @@ register_field_group(array (
     ),
     array (
       'key' => 'slm_poll_definition_firebase_id',
-      'label' => 'Firebase ID',
+      'label' => 'Senti / Firebase ID (please ignore)',
       'name' => 'firebase_id',
       'prefix' => '',
       'type' => 'text',
-      'instructions' => '',
+      'instructions' => 'Reference to remote Senti/Firebase database record. Used for updating Poll.',
       'required' => 0,
       'conditional_logic' => 0,
       'wrapper' => array (
         'width' => '',
         'class' => '',
+        // 'class' => 'hidden-by-conditional-logic',
         'id' => '',
       ),
       'default_value' => '',
@@ -98,7 +99,7 @@ register_field_group(array (
       'append' => '',
       'maxlength' => '',
       'readonly' => 1,
-      'disabled' => 0,
+      'disabled' => 1,
     ),
   ),
   'location' => array (
