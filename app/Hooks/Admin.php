@@ -11,19 +11,13 @@ class Admin {
 
   public function init() {
     // unset($_SESSION['firebase_token']);
-    \add_action("admin_print_scripts-edit.php", array($this, 'addFirebaseToken'));
+    \add_action("admin_print_scripts-edit.php", array($this, 'add_firebase_token'));
     \add_action('wp_ajax_get_firebase_path', array($this, 'get_firebase_path'));
+    \add_action('wp_ajax_update_poll', array($this, 'update_poll'));
     \add_filter('manage_poll_posts_columns', array($this, 'poll_menu_columns'));
   }
 
-  public function poll_menu_columns($defaults) {
-    $defaults['entries'] = 'Entries';
-    return $defaults;
-  }
-
   public function get_firebase_path() {
-    global $wpdb; // this is how you get access to the database
-
     $post_id = intval($_POST['post_id']);
     $user_id = get_field('slm_poll_plugin_settings_senti_user_id', 'options');
     $senti_id = get_field('firebase_id', $post_id);
@@ -33,11 +27,43 @@ class Admin {
     wp_die();
   }
 
+  public function update_poll(){
+    $post_id = intval($_POST['post_id']);
+    $poll = $_POST['poll'];
+
+    // print_r($poll['answers']);
+    update_field('slm_poll_definition_entries', $poll['entries'], $post_id);
+
+    if(have_rows('poll_answers', $post_id)){
+      $i = 0;
+      while(have_rows('poll_answers', $post_id) ) {
+        $row = the_row();
+        foreach($poll['answers'] as $poll_answer){
+          $row_text = $row['slm_poll_definition_answers_answer_text'];
+          if($poll_answer['text'] === $row_text){
+            // Update.
+            $votes = empty($poll_answer['votes']) ? 0 : $poll_answer['votes'];
+            $row['slm_poll_definition_answers_answer_votes'] = $votes;
+            $return = update_post_meta($post_id, "poll_answers_{$i}_answer_votes", $votes);
+          }
+        }
+        $i++;
+      }
+    }
+
+    wp_die();
+  }
+
+  public function poll_menu_columns($defaults) {
+    $defaults['entries'] = 'Entries';
+    return $defaults;
+  }
+
   public function renderFirebaseToken($token){
     echo "<script> var firebase_JWT = '$token'; </script>";
   }
 
-  public function addFirebaseToken(){
+  public function add_firebase_token(){
 
     if (session_status() == PHP_SESSION_NONE) {
       session_start();

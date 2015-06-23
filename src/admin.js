@@ -11,24 +11,35 @@ class AdminPoll {
 
     this.$el = $(options.el)
 
-    var data = {
+    var payload = {
       'action': 'get_firebase_path',
       'post_id': parseInt(this.$el.attr('id').replace('post-', ''))
     };
-
-    $.post(ajaxurl, data, $.proxy(this.getRecord, this));
+    $.post(ajaxurl, payload, $.proxy(this.getRecord, this));
 
   }
 
   getRecord(path){
-    this.firebase.child(path).on("value", $.proxy(this.render, this));
+    this.firebase.child(path).on("value", $.proxy(this.handleValue, this));
   }
 
-  render(snapshot){
+  handleValue(snapshot){
     var data = snapshot.val()
     if(data){
-      this.$el.find('.column-entries').html(data.entries)
+      this.render(data)
+
+      var payload = {
+        'action'  : 'update_poll',
+        'post_id' : parseInt(this.$el.attr('id').replace('post-', '')),
+        'poll'    : data
+      };
+      $.post(ajaxurl, payload, $.proxy(this.handleUpdatePoll, this));
+
     }
+  }
+
+  render(data){
+    this.$el.find('.entries').html(data.entries)
   }
 
 }
