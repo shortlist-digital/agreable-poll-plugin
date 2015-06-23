@@ -6,6 +6,7 @@ use Herbert\Framework\Notifier;
 use SLM_PollPlugin\Hooks\SLMPluginEnqueue;
 use SLM_PollPlugin\Hooks\TimberLoaderPaths;
 use SLM_PollPlugin\Hooks\SavePost;
+use SLM_PollPlugin\Hooks\DeletePost;
 use SLM_PollPlugin\Hooks\Admin;
 
 
@@ -19,6 +20,10 @@ if(class_exists('SLM_PollPlugin\Hooks\SLMPluginEnqueue')){
 
 if(class_exists('SLM_PollPlugin\Hooks\SavePost')){
   (new SavePost)->init();
+}
+
+if(class_exists('SLM_PollPlugin\Hooks\DeletePost')){
+  (new DeletePost)->init();
 }
 
 if(class_exists('SLM_PollPlugin\Hooks\Admin')){

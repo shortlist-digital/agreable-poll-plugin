@@ -2,35 +2,39 @@
 
 use SLM_PollPlugin\Helper;
 
-class SavePost {
+class DeletePost {
 
   public function init() {
-    // Priority  of 20 means post will have already been saved.
-    // \add_action('acf/save_post', array($this, 'savePost'), 20);
-    \add_action( 'delete_post', array($this, 'deletePost'), 10 );
+    \add_action('trash_poll', array($this, 'trashPoll'), 1, 1);
+    \add_action('untrash_post', array($this, 'untrashPost'), 1, 1);
   }
 
-  public function deletePost( $postId ){
-
-    $post = get_post( $postId );
-    if($post->post_type !== 'poll' ||
-      isset($_POST['acf']) === false ){
-      return;
-    }
-
-    //Both user and secret set in the WP settings.
+  public function getPath($postId){
     $userId = get_field('slm_poll_plugin_settings_senti_user_id', 'options');
+    $firebasePollId = get_field('slm_poll_definition_firebase_id', $postId);
+
+    return "polls/$userId/$firebasePollId";
+  }
+
+  public function trashPoll($postId){
     $secret = get_field('slm_poll_plugin_settings_firebase_secret', 'options');
     $firebase = new \Firebase\FirebaseLib('https://senti.firebaseio.com/', $secret);
 
-    $path = 'polls';
+    $path = $this->getPath($postId);
+    $firebase->update($path, array('trashed'=>true));
+  }
 
-    $firebasePollId = get_field('slm_poll_definition_firebase_id', $postId);
+  public function untrashPost($postId){
+    $post = get_post($postId);
+    if($post->post_type !== 'poll'){
+      return;
+    }
 
-    // Update or insert based on presence of firebase_id.
-    // $return = $firebase->update($path.'/'.$userId.'/'.$firebasePollId, $poll);
-    // $firebase->delete($path);
+    $secret = get_field('slm_poll_plugin_settings_firebase_secret', 'options');
+    $firebase = new \Firebase\FirebaseLib('https://senti.firebaseio.com/', $secret);
 
+    $path = $this->getPath($postId);
+    $firebase->update($path, array('trashed'=>false));
   }
 
 }
