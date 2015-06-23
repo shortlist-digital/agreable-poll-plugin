@@ -10,7 +10,8 @@
   ],
   "require": {
     "getherbert/framework": "dev-dev",
-    "ktamas77/firebase-php": "dev-master"
+    "ktamas77/firebase-php": "dev-master",
+    "firebase/token-generator": "^2.0"
   },
   "config": {
     "preferred-install": "dist"
