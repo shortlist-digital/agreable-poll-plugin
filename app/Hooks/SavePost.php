@@ -40,7 +40,8 @@ class SavePost {
     foreach($answers as $answer){
       array_push($poll['answers'], array(
         'text' => $answer,
-        'shareText' => ''
+        'shareText' => '',
+        'votes' => 0
       ));
     }
 
