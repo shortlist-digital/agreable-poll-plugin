@@ -1,337 +1,209 @@
 @import 'nib'
-// @import 'stylus/variables'
 
-.widget-quiz
-  user-select none
+.pulse
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-fill-mode: both;
 
-/* Module/Block: Quiz */
-.quiz
-  background transparent
+.fadeOutUp
+  animation-name: fadeOutUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
 
-.quiz ul
-  overflow hidden
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
 
-.quiz__question-container
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.senti-poll
+  border-top #dcdcdc 1px solid
+  padding-top 32px
+  max-width 760px
+  margin auto
+
+.senti-poll-question
+  text-align center
+  margin-bottom 20px
+
+.senti-poll-answers
+  margin-bottom 40px
+
+.senti-poll-votes-so-far
+  text-align center
+  font-size 24px
+  font-weight bold
+  color #1a1a1a
+  margin-bottom 20px
+
+.senti-poll-progress-bar
+  text-align center
+
+.senti-poll-progress-text
+  padding 10px 0px
+
+.senti-poll-social-prompt
+  text-align center
+
+.btn
+  &.senti-poll-sharing-button
+    border-radius 0px !important
+    text-transform uppercase
+    display block
+    float left
+    width 33.3333333333%
+    border none
+    color #fff
+    font-size 14px
+    letter-spacing 0.1em
+    padding 0px
+  &.senti-poll-vote-button
+    border-radius 10px !important
+    height auto
+    padding 10px
+    line-height 1.3
+
+@media (min-width: 480px)
+  .btn.senti-poll-sharing-button
+    font-size 16px
+    letter-spacing 0.19em
+
+.no-fadeOutUp,
+.fadeOutUp
+  float right
+
+.no-fadeOutUp
+  display none
+
+.fadeOutUp
+  display inline
+
+.senti-poll-button-wrapper
   position relative
+  div
+    position absolute
+    top 50%
+    right 15px
+    transform translateY(-50%)
+    line-height 1
+    color inherit
 
-/* Module/Block: Question */
-.question
-  margin-bottom 30px
-  overflow hidden
+.senti-poll-sharing-facebook
+  background-color #3b5999
+  &:hover
+    background-color #293e6b
 
-.question__number
-  margin-bottom 1rem
+.senti-poll-sharing-twitter
+  background-color #55acee
+  &:hover
+    background-color #157ece
 
-.question__label
-  float left
-  margin-bottom 0
-  line-height 1.3rem
+.senti-poll-sharing-google
+  background-color #dd4b39
+  &:hover
+    background-color #a62c1d
 
-/* Module/Block: Question Image */
-.question-image
-  margin 30px auto;
-  max-width 220px
+.senti-poll-prompt
+  text-align center
   display block
 
-@media (min-width: 401px)
-  .question-image
-    max-width 300px
-
-/* Module/Block: Answers */
-.answers
-  clear both
-  margin-bottom 60px
-  box-sizing border-box
-
-.answers li
-  width: 48%;
-  margin-right: 4%;
-  margin-bottom: 30px;
-  float: left;
-  position: relative;
-  list-style none
-
-.answers li:nth-child(even)
-  margin-right 0
-
-/* Module/Block: Answer */
-.answer
-  min-height: 90px;
-  display: block;
-  cursor: pointer;
-  text-transform: uppercase;
-  border-radius: 1.5rem;
-  display: table;
-  background-color rgba(255,153,0,0.5)
-  width 100%
-  height 100%
-
-.answer:hover
-  background-color black
-  color white
-
-.answer-text
-  display table-cell
+.senti-poll-quote
+  font-size 24px
+  margin-top 20px
+  margin-bottom 20px
   text-align center
-  pointer-events none
-  vertical-align middle
-  padding 10px
-
-.answer.selected
-  background-color black
-  color white
-  box-sizing border-box
-
-.answer .answer-image
-  width 90%
-  margin 5%
-
-/* Module/Block: Quiz Complete Panel */
-.quiz-complete-panel
-  border-top 1px solid #dcdcdc
-  padding-top 30px
-  margin-bottom -3px
-
-.quiz-complete-panel h1
-  margin-bottom 10px
-
-/* Module/Block: Quiz Complete Panel Progress */
-.cp-progress
-  position: static;
-
-.cp-progress.is-static
-  position: static;
+  line-height 1.3
+  -webkit-font-smoothing antialiased
 
 @media (min-width: 768px)
-  .cp-progress
-    display: block;
-    position: fixed;
-    background: white;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    bottom: 0px;
-    width: 100%;
-    transform: translateZ(0);
+  .senti-poll-quote
+    font-size 34px
 
-@media (min-width: 1024px)
-  .cp-progress
-    width: auto;
-    max-width: 650px;
 
-.cp-progress ul
-  margin-bottom: 0;
-  margin-right: 1px;
+.senti-poll-black-bold
+  color #000
+  font-weight bold
 
-.cp-progress li
-  cursor: pointer;
-  float: left;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  padding-left: 0;
-  font-family: 'Graphik Web','Arial Black','Arial Bold',Arial,Helvetica,sans-serif;
-  font-size: 14px;
-  margin-right: 2px;
-  margin-bottom: 3px;
-  perspective: 1000;
-  list-style none
+.senti-poll-poll-text
+  color #000
 
-.cp-progress li:last-child
-  margin-right: 0;
+.senti-poll-share-row
+  overflow hidden
+  margin-bottom 20px
+  max-width 500px
+  margin auto
 
-.cp-progress li .front
-.cp-progress li .back
-  width: 30px;
-  height: 30px;
-  overflow: hidden;
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 15px;
-  padding-top: 0px;
-  font-family: arial;
-
-/* Module/Block: Score Panel */
-.score-panel
-  display: block;
-  color: white;
-  margin-top: 14px;
-  user-select: initial;
-
-.score-panel__message
-  margin-bottom: 17px;
-  color black
-
-.score-panel__summary
-  color gray
-
-.score-panel__message
-.score-panel__summary
+.question-to-answer
   opacity 0
-  transition: opacity 1s;
+  transition all 1s ease-in
 
-.score-panel__message.is-revealed
-.score-panel__summary.is-revealed
+.question-to-answer-enter-active
+  transition all 1s ease-in
   opacity 1
 
-.score-panel__summary
-  margin-bottom 18px
-  position static
-  display block
-
-// Formally .outcome-image
-.score-panel__image
-  display: none;
-  max-width: 300px;
-  margin-bottom: 22px;
-  margin-top: 14px;
-  margin-left: auto;
-  margin-right: auto;
-
-@media (min-width: 500px)
-  .outcome-image
-    float: right;
-    margin-bottom: 30px;
-    margin-top: 6px;
-    margin-left: 10px;
-    margin-right: 0;
-
-/* Module/Block: Flipper */
-.flipper
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  position: relative;
-
-.flipper__circle
-  width: 30px;
-  height: 30px;
-  overflow: hidden;
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 15px;
-  padding-top: 0px;
-  font-family: arial;
-
-.flipper__circle--front
-  z-index: 2;
-  transform: rotateY(180deg);
-  background-color: black;
-  color: white;
-
-.flipper__circle--back
-  transform: rotateY(0deg);
-  background-color: #dcdcdc;
-  color: black;
-
-li.answered .flipper
-  transform: rotateY(180deg);
-
-.quiz-complete.answered .flipper
-  transform: rotateY(0deg);
-  color: white;
-
-.quiz-complete.correct .flipper__circle
-  background-color: rgb(34, 134, 34);
-  color: white;
-
-.quiz-complete.incorrect .flipper__circle
-  background-color: #DD371E;
-  color: white;
-
-/* TODO */
-/* Module/Block: Answer Info */
-.answer-information
+.question-to-answer-leave-active
+  transition all 1s ease-in
   opacity 0
-  transition: opacity 1s;
 
-.answer-information
-  display: none;
-  position: relative;
-  top: -30px;
-  margin-left: 10px;
-  margin-right: 10px;
-  background: rgb(234, 234, 234);
-  color: black;
-  padding: 10px;
-  font-family: Georgia,serif;
-  text-transform: none;
-  font-size: 16px;
-  box-shadow: 0px 5px 24px -7px rgba(10, 8, 8, 0.53);
+.senti-poll-sharing-wrapper
+  position relative
+  margin 40px auto
+  transition all 0.5s ease-out
+  &.hide-wrapper
+    height 0
+    opacity 0
+  &.show-wrapper
+    height auto !important
+    opacity 1
+    min-height 320px
 
-.answer-information:before
-  content: '';
-  position: absolute;
-  left: 50%;
-  margin-left: -10px;
-  height: 20px;
-  width: 20px;
-  /* -webkit-transform: rotateY(180deg); */
-  transform: rotateZ(45deg);
-  background: rgb(234, 234, 234);
-  top: -10px;
+.senti-poll-sharing-content
+  position absolute
+  top 50%
+  transform translateY(-50%)
 
-.quiz-complete .answer-information
-  display: block;
+.senti-poll-bfc
+  position absolute
+  left 50%
+  transform translateX(-50%)
+  background #eaeaea
+  padding-right 320px
+  height 100%
+  border-radius 100%
 
-.answer-information.is-revealed
-  opacity 1
+.triangle-border
+  position relative
+  padding 15px
+  margin 1em 0 3em
+  border 3px solid #232323
+  border-radius 10px
+  margin-left 30px
+  &:before
+    top 10px
+    bottom auto
+    left -30px
+    border-width 15px 30px 15px 0
+    border-color transparent #5a8f00
+  &:after
+    top 16px
+    bottom auto
+    left -21px
+    border-width 11px 21px 11px 0
+    border-color transparent #fff
 
-/*
- * The styles below are not implemented as yet
- * Is .ie-old going to be used in new site?
- * Is .chrome.windows transform: rotate an issue still?
- */
-
-/*
-
-.quiz-complete-panel h2, #cp-quiz-share, .cp-more, #cp-quiz {
-  opacity: 0;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
-}
-
-.cp-more, #cp-quiz-share
-  opacity 0
-}
-
-.at-resp-share-element a .label {
-  font-family: 'Arial Black','Arial Bold',Arial,Helvetica,sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.ie-old #cp-quiz .cp-progress li.answered .flipper, .ie-old #cp-quiz .cp-progress .front {
-  transform: rotateY(0deg) !important;
-}
-
-.ie-old #cp-quiz .cp-progress li {
-  line-height: 28px;
-}
-
-.ie-old #cp-quiz .cp-progress li.answered .back {
-  display: none;
-}
-.ie-old #cp-quiz .cp-progress li .flipper .front {
-  background-color: #7d7e7f;
-}
-.ie-old #cp-quiz .cp-progress li.answered .flipper .front {
-  background-color: #000;
-}
-.ie-old #cp-quiz .cp-progress li .front, .chrome.windows #cp-quiz .cp-progress li .front, .chrome.windows #cp-quiz .cp-progress li .back {
-  padding-top: 0px;
-}
-.ie-old #cp-quiz .cp-progress li.quiz-complete.correct .flipper .front {
-  background-color: rgb(34, 134, 34);
-}
-.ie-old #cp-quiz .cp-progress li.quiz-complete.incorrect .flipper .front {
-  background-color: #DD371E;
-}
-
-.ie-old #cp-quiz .cp-progress.cp-static  ul {
-  width: 110%;
-}
-*/

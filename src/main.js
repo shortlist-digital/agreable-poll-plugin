@@ -10,7 +10,7 @@ class Poll extends Backbone.View {
 
   constructor (options) {
 
-    console.log('Quiz::constructor')
+    console.log('Poll::constructor')
 
     this.firebase = new Firebase("https://senti.firebaseio.com/")
 

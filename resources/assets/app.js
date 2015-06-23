@@ -68,7 +68,6 @@
 	    console.log("Poll::constructor");
 
 	    this.firebase = new Firebase("https://senti.firebaseio.com/");
-	    console.log(this.firebase);
 
 	    this.setElement(options.el);
 	    this.$el = $(options.el);

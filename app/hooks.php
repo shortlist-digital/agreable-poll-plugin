@@ -3,6 +3,7 @@
 /** @var  \Herbert\Framework\Application $container */
 
 use Herbert\Framework\Notifier;
+use SLM_PollPlugin\Hooks\SLMPluginEnqueue;
 use SLM_PollPlugin\Hooks\TimberLoaderPaths;
 use SLM_PollPlugin\Hooks\SavePost;
 use SLM_PollPlugin\Hooks\Admin;
@@ -10,6 +11,10 @@ use SLM_PollPlugin\Hooks\Admin;
 
 if(class_exists('SLM_PollPlugin\Hooks\TimberLoaderPaths')){
   (new TimberLoaderPaths)->init();
+}
+
+if(class_exists('SLM_PollPlugin\Hooks\SLMPluginEnqueue')){
+  (new SLMPluginEnqueue)->init();
 }
 
 if(class_exists('SLM_PollPlugin\Hooks\SavePost')){

@@ -7,7 +7,7 @@ class RenderController {
   public function enqueue($postId){
 
     // Enqueue scripts.
-    wp_enqueue_script( 'slm_quiz_script', Helper::assetUrl('app.js'), array(), '1.0.0', true );
+    // wp_enqueue_script( 'slm_poll_script', Helper::assetUrl('app.js'), array(), '1.0.0', true );
     /*
      * @SLM_PollPlugin is a Twig namespace which Herbert generates from
      * values in herbert.config.php.
@@ -26,6 +26,7 @@ class RenderController {
         'plugin_settings_property_font_family'         => get_field($ns.'_plugin_settings_property_font_family', 'option'),
         'plugin_settings_free_text'                    => get_field($ns.'_plugin_settings_free_text_css', 'option'),
     ])->getBody();
+
   }
 
 }
