@@ -3,13 +3,13 @@ var path = require('path')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 var buildPath = path.resolve(__dirname, 'resources', 'assets');
-var mainPath = path.resolve(__dirname, 'src', 'main.js');
+var mainPath = path.resolve(__dirname, 'src', 'admin.js');
 
-module.exports = {
+module.exports = [{
   entry: mainPath,
   output: {
     path: buildPath,
-    filename: 'app.js'
+    filename: 'admin.js'
   },
   module: {
     loaders: [
@@ -33,4 +33,4 @@ module.exports = {
   stylus: {
     use: [nib()]
   }
-}
+}]
