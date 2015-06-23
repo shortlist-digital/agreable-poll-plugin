@@ -39,7 +39,7 @@ class SavePost {
     // Loop through answers in ACF.
     foreach($answers as $answer){
       array_push($poll['answers'], array(
-        'text' => $answer,
+        'text' => $answer['answer_text'],
         'shareText' => '',
         'votes' => 0
       ));
