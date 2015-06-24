@@ -1,6 +1,6 @@
 {
   "name": "ShotlistMedia/slm-wp-poll-plugin",
-  "type": "worpdress-plugin",
+  "type": "wordpress-plugin",
   "description": "Wordpress plugin for Shortlist Media.",
   "license": "MIT",
   "repositories": [
