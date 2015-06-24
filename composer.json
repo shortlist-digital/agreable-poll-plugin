@@ -14,10 +14,10 @@
     "ktamas77/firebase-php": "dev-master",
     "firebase/token-generator": "^2.0"
   },
+  "minimum-stability": "dev",
   "config": {
     "preferred-install": "dist"
   },
-  "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
       "SLM_PollPlugin\\": "app/"
