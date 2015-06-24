@@ -1,6 +1,7 @@
 {
-  "name": "getherbert/herbert-plugin",
-  "description": "Herbert plugin",
+  "name": "ShotlistMedia/slm-wp-poll-plugin",
+  "type": "worpdress-plugin",
+  "description": "Wordpress plugin for Shortlist Media.",
   "license": "MIT",
   "repositories": [
     {
