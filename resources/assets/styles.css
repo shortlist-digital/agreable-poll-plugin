@@ -213,6 +213,7 @@
   min-height: 320px;
 }
 .senti-poll-sharing-content {
+  width: 100%;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
