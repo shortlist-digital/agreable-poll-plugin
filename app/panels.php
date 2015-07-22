@@ -1,6 +1,6 @@
-<?php namespace SLM_PollPlugin;
+<?php namespace AgreablePollPlugin;
 
-use SLM_PollPlugin\Helper;
+use AgreablePollPlugin\Helper;
 // The helper cannot be used at the moment if more than one Herbetr plugin is present.
 $ns = Helper::get('slm_namespace');
 

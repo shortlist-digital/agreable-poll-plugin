@@ -3,30 +3,30 @@
 /** @var  \Herbert\Framework\Application $container */
 
 use Herbert\Framework\Notifier;
-use SLM_PollPlugin\Hooks\SLMPluginEnqueue;
-use SLM_PollPlugin\Hooks\TimberLoaderPaths;
-use SLM_PollPlugin\Hooks\SavePost;
-use SLM_PollPlugin\Hooks\DeletePost;
-use SLM_PollPlugin\Hooks\Admin;
+use AgreablePollPlugin\Hooks\SLMPluginEnqueue;
+use AgreablePollPlugin\Hooks\TimberLoaderPaths;
+use AgreablePollPlugin\Hooks\SavePost;
+use AgreablePollPlugin\Hooks\DeletePost;
+use AgreablePollPlugin\Hooks\Admin;
 
 
-if(class_exists('SLM_PollPlugin\Hooks\TimberLoaderPaths')){
+if(class_exists('AgreablePollPlugin\Hooks\TimberLoaderPaths')){
   (new TimberLoaderPaths)->init();
 }
 
-if(class_exists('SLM_PollPlugin\Hooks\SLMPluginEnqueue')){
+if(class_exists('AgreablePollPlugin\Hooks\SLMPluginEnqueue')){
   (new SLMPluginEnqueue)->init();
 }
 
-if(class_exists('SLM_PollPlugin\Hooks\SavePost')){
+if(class_exists('AgreablePollPlugin\Hooks\SavePost')){
   (new SavePost)->init();
 }
 
-if(class_exists('SLM_PollPlugin\Hooks\DeletePost')){
+if(class_exists('AgreablePollPlugin\Hooks\DeletePost')){
   (new DeletePost)->init();
 }
 
-if(class_exists('SLM_PollPlugin\Hooks\Admin')){
+if(class_exists('AgreablePollPlugin\Hooks\Admin')){
   (new Admin)->init();
 }
 

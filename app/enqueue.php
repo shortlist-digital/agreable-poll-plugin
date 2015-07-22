@@ -1,4 +1,4 @@
-<?php namespace SLM_PollPlugin;
+<?php namespace AgreablePollPlugin;
 
 /** @var \Herbert\Framework\Enqueue $enqueue */
 

@@ -56,21 +56,21 @@ return [
      * The routes to auto-load.
      */
     'routes' => [
-        // 'SLM_PollPlugin' => __DIR__ . '/app/routes.php'
+        // 'AgreablePollPlugin' => __DIR__ . '/app/routes.php'
     ],
 
     /**
      * The panels to auto-load.
      */
     'panels' => [
-        'SLM_PollPlugin' => __DIR__ . '/app/panels.php'
+        'AgreablePollPlugin' => __DIR__ . '/app/panels.php'
     ],
 
     /**
      * The APIs to auto-load.
      */
     'apis' => [
-        // 'SLM_PollPlugin' => __DIR__ . '/app/api.php'
+        // 'AgreablePollPlugin' => __DIR__ . '/app/api.php'
     ],
 
     /**
@@ -81,7 +81,7 @@ return [
      * when rendering a view in twig.
      */
     'views' => [
-        'SLM_PollPlugin' => __DIR__ . '/resources/views'
+        'AgreablePollPlugin' => __DIR__ . '/resources/views'
     ],
 
     /**

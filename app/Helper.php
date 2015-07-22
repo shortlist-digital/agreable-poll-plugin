@@ -1,4 +1,4 @@
-<?php namespace SLM_PollPlugin;
+<?php namespace AgreablePollPlugin;
 
 class Helper {
 

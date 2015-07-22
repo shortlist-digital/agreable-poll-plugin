@@ -1,8 +1,8 @@
-<?php namespace SLM_PollPlugin\Hooks;
+<?php namespace AgreablePollPlugin\Hooks;
 
 use Herbert\Framework\Notifier;
-use SLM_PollPlugin\Hooks\TimberLoaderPaths;
-use SLM_PollPlugin\Hooks\SavePost;
+use AgreablePollPlugin\Hooks\TimberLoaderPaths;
+use AgreablePollPlugin\Hooks\SavePost;
 
 use Firebase\Token\TokenException;
 use Firebase\Token\TokenGenerator;

@@ -2,7 +2,7 @@
 
 /** @var  \Herbert\Framework\Application $container */
 
-use SLM_PollPlugin\Helper;
+use AgreablePollPlugin\Helper;
 
 /*
  * We want Timber to render our plugin templates so we need to

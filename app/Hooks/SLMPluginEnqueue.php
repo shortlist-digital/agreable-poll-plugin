@@ -1,6 +1,6 @@
-<?php namespace SLM_PollPlugin\Hooks;
+<?php namespace AgreablePollPlugin\Hooks;
 
-use SLM_PollPlugin\Controllers\RenderController;
+use AgreablePollPlugin\Controllers\RenderController;
 
 class SLMPluginEnqueue {
 

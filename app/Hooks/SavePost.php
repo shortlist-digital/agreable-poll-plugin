@@ -1,6 +1,6 @@
-<?php namespace SLM_PollPlugin\Hooks;
+<?php namespace AgreablePollPlugin\Hooks;
 
-use SLM_PollPlugin\Helper;
+use AgreablePollPlugin\Helper;
 
 class SavePost {
 
