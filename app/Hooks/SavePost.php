@@ -18,8 +18,8 @@ class SavePost {
     }
 
     //Both user and secret set in the WP settings.
-    $userId = get_field('slm_poll_plugin_settings_senti_user_id', 'options');
-    $secret = get_field('slm_poll_plugin_settings_firebase_secret', 'options');
+    $userId = get_field('agreable_poll_plugin_settings_senti_user_id', 'options');
+    $secret = get_field('agreable_poll_plugin_settings_firebase_secret', 'options');
     $firebase = new \Firebase\FirebaseLib('https://senti.firebaseio.com/', $secret);
 
     $path = 'polls';
@@ -35,7 +35,7 @@ class SavePost {
       )
     );
 
-    $answers = get_field('slm_poll_definition_answers', $postId);
+    $answers = get_field('agreable_poll_definition_answers', $postId);
     // Loop through answers in ACF.
     foreach($answers as $answer){
       array_push($poll['answers'], array(
@@ -45,7 +45,7 @@ class SavePost {
       ));
     }
 
-    $firebasePollId = get_field('slm_poll_definition_firebase_id', $postId);
+    $firebasePollId = get_field('agreable_poll_definition_firebase_id', $postId);
     // Update or insert based on presence of firebase_id.
     if( empty($firebasePollId) === false ){
       // Update.
@@ -57,7 +57,7 @@ class SavePost {
       $return = $firebase->push($path.'/'.$userId, $poll);
       // Insert object contains firebase id.
       $returnJSON = json_decode($return);
-      update_field('slm_poll_definition_firebase_id', $returnJSON->name, $postId);
+      update_field('agreable_poll_definition_firebase_id', $returnJSON->name, $postId);
     }
 
   }

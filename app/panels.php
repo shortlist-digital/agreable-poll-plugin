@@ -2,7 +2,7 @@
 
 use AgreablePollPlugin\Helper;
 // The helper cannot be used at the moment if more than one Herbetr plugin is present.
-$ns = Helper::get('slm_namespace');
+$ns = Helper::get('agreable_namespace');
 
 /*
  * Although we're in the Herbert panel file, we're not using any built in

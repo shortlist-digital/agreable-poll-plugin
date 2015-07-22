@@ -1,7 +1,7 @@
 <?php
 
 // $config = require_once 'herbert.config.php';
-// $ns = $config['slm_namespace'];
+// $ns = $config['agreable_namespace'];
 
 $widget_config = array (
     'key' => 'widget_poll',

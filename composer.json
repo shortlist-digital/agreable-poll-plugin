@@ -1,5 +1,5 @@
 {
-  "name": "ShortlistMedia/slm-wp-poll-plugin",
+  "name": "ShortlistMedia/agreable-poll-plugin",
   "type": "wordpress-plugin",
   "description": "Wordpress plugin for Shortlist Media.",
   "license": "MIT",
@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "SLM_PollPlugin\\": "app/"
+      "AgreablePollPlugin\\": "app/"
     }
   }
 }

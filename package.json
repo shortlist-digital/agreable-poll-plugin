@@ -1,5 +1,5 @@
 {
-  "name": "slm-wp-poll-plugin",
+  "name": "agrable-poll-plugin",
   "version": "0.1.0",
   "description": "Shortlist Media Poll Plugin",
   "main": "gulpfile.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:ShortlistMedia/slm-wp-poll-plugin.git"
+    "url": "git@bitbucket.org:ShortlistMedia/agrable-poll-plugin.git"
   },
   "author": "Shortlist Media",
   "license": "ISC",

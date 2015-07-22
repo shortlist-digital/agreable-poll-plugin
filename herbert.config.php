@@ -99,10 +99,10 @@ return [
     /**
      * Namespace used in ACF Panel definitions.
      */
-    'slm_namespace'       => 'slm_poll',
+    'agreable_namespace'       => 'agreable_poll',
 
     /**
      * Currently unused.
      */
-    'slm_pluginTitle'     => 'Poll'
+    'agreable_pluginTitle'     => 'Poll'
 ];

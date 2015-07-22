@@ -7,7 +7,7 @@ class RenderController {
   public function enqueue($postId){
 
     // Enqueue scripts.
-    // wp_enqueue_script( 'slm_poll_script', Helper::assetUrl('app.js'), array(), '1.0.0', true );
+    // wp_enqueue_script( 'agreable_poll_script', Helper::assetUrl('app.js'), array(), '1.0.0', true );
     /*
      * @AgreablePollPlugin is a Twig namespace which Herbert generates from
      * values in herbert.config.php.
@@ -18,7 +18,7 @@ class RenderController {
      * ACF definitions for Panel are in app/panels.php.
      */
 
-    $ns = Helper::get('slm_namespace');
+    $ns = Helper::get('agreable_namespace');
     echo view('@AgreablePollPlugin/styles.twig', [
         'common_css_path'   => Helper::asset('styles.css'),
         'plugin_settings_property_primary_colour'      => get_field($ns.'_plugin_settings_property_primary_colour', 'option'),

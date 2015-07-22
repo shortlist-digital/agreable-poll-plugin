@@ -10,14 +10,14 @@ class DeletePost {
   }
 
   public function getPath($postId){
-    $userId = get_field('slm_poll_plugin_settings_senti_user_id', 'options');
-    $firebasePollId = get_field('slm_poll_definition_firebase_id', $postId);
+    $userId = get_field('agreable_poll_plugin_settings_senti_user_id', 'options');
+    $firebasePollId = get_field('agreable_poll_definition_firebase_id', $postId);
 
     return "polls/$userId/$firebasePollId";
   }
 
   public function trashPoll($postId){
-    $secret = get_field('slm_poll_plugin_settings_firebase_secret', 'options');
+    $secret = get_field('agreable_poll_plugin_settings_firebase_secret', 'options');
     $firebase = new \Firebase\FirebaseLib('https://senti.firebaseio.com/', $secret);
 
     $path = $this->getPath($postId);
@@ -30,7 +30,7 @@ class DeletePost {
       return;
     }
 
-    $secret = get_field('slm_poll_plugin_settings_firebase_secret', 'options');
+    $secret = get_field('agreable_poll_plugin_settings_firebase_secret', 'options');
     $firebase = new \Firebase\FirebaseLib('https://senti.firebaseio.com/', $secret);
 
     $path = $this->getPath($postId);

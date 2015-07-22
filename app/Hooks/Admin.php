@@ -19,7 +19,7 @@ class Admin {
 
   public function get_firebase_path() {
     $post_id = intval($_POST['post_id']);
-    $user_id = get_field('slm_poll_plugin_settings_senti_user_id', 'options');
+    $user_id = get_field('agreable_poll_plugin_settings_senti_user_id', 'options');
     $senti_id = get_field('firebase_id', $post_id);
 
     echo "polls/$user_id/$senti_id";
@@ -32,18 +32,18 @@ class Admin {
     $poll = $_POST['poll'];
 
     // print_r($poll['answers']);
-    update_field('slm_poll_definition_entries', $poll['entries'], $post_id);
+    update_field('agreable_poll_definition_entries', $poll['entries'], $post_id);
 
     if(have_rows('poll_answers', $post_id)){
       $i = 0;
       while(have_rows('poll_answers', $post_id) ) {
         $row = the_row();
         foreach($poll['answers'] as $poll_answer){
-          $row_text = $row['slm_poll_definition_answers_answer_text'];
+          $row_text = $row['agreable_poll_definition_answers_answer_text'];
           if($poll_answer['text'] === $row_text){
             // Update.
             $votes = empty($poll_answer['votes']) ? 0 : $poll_answer['votes'];
-            $row['slm_poll_definition_answers_answer_votes'] = $votes;
+            $row['agreable_poll_definition_answers_answer_votes'] = $votes;
             $return = update_post_meta($post_id, "poll_answers_{$i}_answer_votes", $votes);
           }
         }
@@ -84,8 +84,8 @@ class Admin {
       return;
     }
 
-    $secret = get_field('slm_poll_plugin_settings_firebase_secret', 'options');
-    $user = get_field('slm_poll_plugin_settings_senti_user_id', 'options');
+    $secret = get_field('agreable_poll_plugin_settings_firebase_secret', 'options');
+    $user = get_field('agreable_poll_plugin_settings_senti_user_id', 'options');
     if(empty($secret) || empty($user)){
       $missing = empty($secret) ? "'Firebase secret'" : '';
       $missing .= (empty($secret) === true && empty($user) === true) ? ' and ' : '';

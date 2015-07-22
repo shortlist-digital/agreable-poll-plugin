@@ -10,11 +10,11 @@ if ( ! class_exists( 'ACF' ) ) {
 if( function_exists('register_field_group') ):
 
 register_field_group(array (
-  'key' => 'slm_poll_definition',
+  'key' => 'agreable_poll_definition',
   'title' => 'Poll Definition',
   'fields' => array (
     array (
-      'key' => 'slm_poll_definition_entries',
+      'key' => 'agreable_poll_definition_entries',
       'label' => 'Entries',
       'name' => 'entries',
       'prefix' => '',
@@ -36,7 +36,7 @@ register_field_group(array (
       'disabled' => 0,
     ),
     array (
-      'key' => 'slm_poll_definition_answers',
+      'key' => 'agreable_poll_definition_answers',
       'label' => 'Answers',
       'name' => 'poll_answers',
       'prefix' => '',
@@ -55,7 +55,7 @@ register_field_group(array (
       'button_label' => 'Add an answer',
       'sub_fields' => array (
         array (
-          'key' => 'slm_poll_definition_answers_answer_text',
+          'key' => 'agreable_poll_definition_answers_answer_text',
           'label' => 'Answer / Button Text',
           'name' => 'answer_text',
           'prefix' => '',
@@ -77,7 +77,7 @@ register_field_group(array (
           'disabled' => 0,
         ),
         array (
-          'key' => 'slm_poll_definition_answers_answer_votes',
+          'key' => 'agreable_poll_definition_answers_answer_votes',
           'label' => 'Votes',
           'name' => 'answer_votes',
           'prefix' => '',
@@ -101,7 +101,7 @@ register_field_group(array (
       ),
     ),
     array (
-      'key' => 'slm_poll_definition_firebase_id',
+      'key' => 'agreable_poll_definition_firebase_id',
       'label' => 'Senti / Firebase ID (please ignore)',
       'name' => 'firebase_id',
       'prefix' => '',
