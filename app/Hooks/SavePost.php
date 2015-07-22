@@ -12,7 +12,9 @@ class SavePost {
   public function savePost( $postId ){
 
     $post = get_post( $postId );
-    if($post->post_type !== 'poll' ||
+    if(
+      $postId == 'options' ||
+      $post->post_type !== 'poll' ||
       isset($_POST['acf']) === false ){
       return;
     }

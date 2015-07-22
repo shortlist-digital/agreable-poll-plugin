@@ -11,7 +11,7 @@
  * License:           MIT
  */
 
-if(file_exists(__DIR__ . '/../../../../vendor/autoload.php')){
+if(file_exists(__DIR__ . '/../../../../vendor/getherbert/')){
   require_once __DIR__ . '/../../../../vendor/autoload.php';
 } else {
   require_once __DIR__ . '/vendor/autoload.php';
