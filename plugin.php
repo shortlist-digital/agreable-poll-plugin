@@ -2,8 +2,8 @@
 
 /**
  * @wordpress-plugin
- * Plugin Name:       SLM Poll Plugin
- * Plugin URI:        http://shortlistmedia.co.uk
+ * Plugin Name:       Agreable Poll Plugin
+ * Plugin URI:        https://bitbucket.org/ShortlistMedia/agreable-poll-plugin
  * Description:       Create custom polls.
  * Version:           0.1.0
  * Author:            Shortlist Media
