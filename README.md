@@ -1,4 +1,4 @@
-Shortlist Media Wordpress Quiz Plugin
+Shortlist Media Wordpress Poll Plugin
 ===============
 
 Wordpress Plugin built  for Croissant stack using [Herbert](http://getherbert.com/) plugin framework.
