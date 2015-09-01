@@ -31,6 +31,9 @@ HTML;
 
     $post = get_posts("name=$slug&post_type=poll");
 
+    if(! $post || count($post) == 0){
+      throw new \RuntimeException('Poll doesn\'t exist with this slug');
+    }
     $context = \Timber::get_context();
     $context['poll'] = new \TimberPost($post[0]);
 
