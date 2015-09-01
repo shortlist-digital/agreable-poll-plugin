@@ -9,7 +9,7 @@ $router->get([
 
 $router->get([
   'as'   => 'poll_preview',
-  'uri'  => '/poll/{slug}/preview',
+  'uri'  => '/poll/{slug}',
   'uses' => __NAMESPACE__ . '\Controllers\RenderController@preview'
 ]);
 
