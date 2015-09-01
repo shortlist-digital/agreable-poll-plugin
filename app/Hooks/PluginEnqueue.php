@@ -2,7 +2,7 @@
 
 use AgreablePollPlugin\Controllers\RenderController;
 
-class SLMPluginEnqueue {
+class PluginEnqueue {
 
   public function init() {
     \add_action('agreable_poll_plugin_enqueue', array($this, 'plugin_assets'), 10, 0);
