@@ -14,6 +14,22 @@ register_field_group(array (
   'title' => 'Poll Definition',
   'fields' => array (
     array (
+      'key' => 'poll_definition_message',
+      'label' => 'Previewing & Embedding',
+      'name' => '',
+      'type' => 'message',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'message' => 'To preview correctly you will need to publish first. Once happy with preview you can get the raw HTML by suffixing the URL with "embed". e.g. <b>http://embeds-local.shortlist.com/poll/what-is-your-favourite-cheese/embed</b> ',
+      'esc_html' => 0,
+    ),
+    array (
       'key' => 'agreable_poll_definition_entries',
       'label' => 'Entries',
       'name' => 'entries',
