@@ -7,7 +7,8 @@ class RenderController {
   public function enqueue(){
 
     // Enqueue scripts.
-    // wp_enqueue_script( 'agreable_poll_script', Helper::assetUrl('app.js'), array(), '1.0.0', true );
+    wp_enqueue_script( 'agreable_poll_script', Helper::assetUrl('client.js'), array(), '1.0.0', true );
+
     /*
      * @AgreablePollPlugin is a Twig namespace which Herbert generates from
      * values in herbert.config.php.
@@ -17,7 +18,6 @@ class RenderController {
      * specific options affecting the style of the quiz.
      * ACF definitions for Panel are in app/panels.php.
      */
-
     $ns = Helper::get('agreable_namespace');
     echo view('@AgreablePollPlugin/styles.twig', [
         'common_css_path'   => Helper::asset('styles.css'),

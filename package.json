@@ -23,11 +23,31 @@
     "stylus-loader": "~1.0.0",
     "webpack": "~1.7.3",
     "babel": "~4.7.16",
-    "extract-text-webpack-plugin": "~0.5.0"
+    "extract-text-webpack-plugin": "~0.5.0",
+    "gulp": "^3.9.0",
+    "vinyl-buffer": "^1.0.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-util": "^3.0.6",
+    "watchify": "^3.3.1",
+    "gulp-livereload": "^3.8.0",
+    "browserify": "^11.0.1",
+    "vinyl-source-stream": "^1.1.0",
+    "babelify": "^6.3.0"
   },
   "dependencies": {
     "backbone": "~1.1.2",
     "jquery": "~2.1.3",
-    "jquery-latest": "~1.9.0"
+    "jquery-latest": "~1.9.0",
+    "query-string": "^2.4.0",
+    "react-prefixr": "^0.1.0",
+    "store": "^1.3.17",
+    "react-router": "^0.13.3",
+    "react-window-mixins": "0.0.6",
+    "timeago": "^1.4.2",
+    "reactfire": "^0.5.0",
+    "stylify": "^1.3.1",
+    "react": "^0.13.3",
+    "react-dnd": "^1.1.5",
+    "add-commas": "0.0.4"
   }
 }
