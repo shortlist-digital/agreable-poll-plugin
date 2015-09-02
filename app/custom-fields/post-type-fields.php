@@ -14,22 +14,6 @@ register_field_group(array (
   'title' => 'Poll Definition',
   'fields' => array (
     array (
-      'key' => 'poll_definition_message',
-      'label' => 'Previewing & Embedding',
-      'name' => '',
-      'type' => 'message',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'message' => 'To preview correctly you will need to publish first. Once happy with preview you can get the raw HTML by suffixing the URL with "embed". e.g. <b>http://embeds-local.shortlist.com/poll/what-is-your-favourite-cheese/embed</b> ',
-      'esc_html' => 0,
-    ),
-    array (
       'key' => 'agreable_poll_definition_entries',
       'label' => 'Entries',
       'name' => 'entries',
@@ -116,15 +100,42 @@ register_field_group(array (
         ),
       ),
     ),
+    array(
+      'key' => 'agreable_poll_definition_show_sentifirebase_settings',
+      'label' => 'Show Senti/Firebase details',
+      'name' => 'show_sentifirebase_settings',
+      'type' => 'true_false',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => 'extra-widget-settings',
+        'id' => '',
+      ),
+      'choices' => array (
+        '' => '',
+      ),
+      'default_value' => 0,
+      'layout' => 'vertical',
+    ),
     array (
       'key' => 'agreable_poll_definition_firebase_id',
-      'label' => 'Senti / Firebase ID (please ignore)',
+      'label' => 'Senti / Firebase Poll ID',
       'name' => 'firebase_id',
       'prefix' => '',
       'type' => 'text',
       'instructions' => 'Reference to remote Senti/Firebase database record. Used for updating Poll.',
       'required' => 0,
-      'conditional_logic' => 0,
+      'conditional_logic' => array (
+        array (
+          array (
+            'field' => 'agreable_poll_definition_show_sentifirebase_settings',
+            'operator' => '==',
+            'value' => '1',
+          ),
+        ),
+      ),
       'wrapper' => array (
         'width' => '',
         'class' => '',
@@ -138,6 +149,22 @@ register_field_group(array (
       'maxlength' => '',
       'readonly' => 1,
       'disabled' => 1,
+    ),
+    array (
+      'key' => 'poll_definition_message',
+      'label' => 'Previewing & Embedding',
+      'name' => '',
+      'type' => 'message',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'message' => 'To preview correctly you will need to publish first. Once happy with preview you can get the raw HTML by suffixing the URL with "embed". e.g. <b>http://embeds-local.shortlist.com/poll/what-is-your-favourite-cheese/embed</b> ',
+      'esc_html' => 0,
     ),
   ),
   'location' => array (
