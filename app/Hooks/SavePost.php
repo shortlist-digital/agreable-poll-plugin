@@ -1,5 +1,6 @@
 <?php namespace AgreablePollPlugin\Hooks;
 
+use Herbert\Framework\Notifier;
 use AgreablePollPlugin\Helper;
 
 class SavePost {
@@ -22,11 +23,14 @@ class SavePost {
     //Both user and secret set in the WP settings.
     $userId = get_field('agreable_poll_plugin_settings_senti_user_id', 'options');
     $secret = get_field('agreable_poll_plugin_settings_firebase_secret', 'options');
+    if(empty($secret) || empty($userId)){
+      $pollsettings = get_admin_url( null, '/edit.php?post_type=poll&page=acf-options-poll-settings');
+      return;
+    }
     $firebase = new \Firebase\FirebaseLib('https://senti.firebaseio.com/', $secret);
 
     $path = 'polls';
     $acf = $_POST['acf'];
-
 
     // Empty poll obj.
     $poll = array(
