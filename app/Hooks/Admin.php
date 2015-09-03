@@ -15,6 +15,26 @@ class Admin {
     \add_action('wp_ajax_get_firebase_path', array($this, 'get_firebase_path'));
     \add_action('wp_ajax_update_poll', array($this, 'update_poll'));
     \add_filter('manage_poll_posts_columns', array($this, 'poll_menu_columns'));
+    \add_filter('admin_head', array($this, 'missing_settings'));
+  }
+
+  public function missing_settings() {
+    $screen = get_current_screen();
+    if($screen->post_type !== 'poll'){
+      return;
+    }
+
+    $user = get_field('agreable_poll_plugin_settings_senti_user_id', 'options');
+    $secret = get_field('agreable_poll_plugin_settings_firebase_secret', 'options');
+    if(empty($secret) || empty($user)){
+      $pollsettings = get_admin_url( null, '/edit.php?post_type=poll&page=acf-options-poll-settings');
+      $missing = empty($secret) ? "'Firebase secret'" : '';
+      $missing .= (empty($secret) === true && empty($user) === true) ? ' and ' : '';
+      $missing .= empty($user) ? "'Senti User ID'" : '';
+      Notifier::error("Your are missing settings, which will cause Polls to not function correctly ($missing). Please visit <a href='$pollsettings'>Poll Settings</a> page and contact the digital operations team if necessary.");
+      return;
+    }
+
   }
 
   public function get_firebase_path() {

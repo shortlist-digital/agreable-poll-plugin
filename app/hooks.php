@@ -3,7 +3,7 @@
 /** @var  \Herbert\Framework\Application $container */
 
 use Herbert\Framework\Notifier;
-use AgreablePollPlugin\Hooks\SLMPluginEnqueue;
+use AgreablePollPlugin\Hooks\PluginEnqueue;
 use AgreablePollPlugin\Hooks\TimberLoaderPaths;
 use AgreablePollPlugin\Hooks\SavePost;
 use AgreablePollPlugin\Hooks\DeletePost;
@@ -14,8 +14,8 @@ if(class_exists('AgreablePollPlugin\Hooks\TimberLoaderPaths')){
   (new TimberLoaderPaths)->init();
 }
 
-if(class_exists('AgreablePollPlugin\Hooks\SLMPluginEnqueue')){
-  (new SLMPluginEnqueue)->init();
+if(class_exists('AgreablePollPlugin\Hooks\PluginEnqueue')){
+  (new PluginEnqueue)->init();
 }
 
 if(class_exists('AgreablePollPlugin\Hooks\SavePost')){

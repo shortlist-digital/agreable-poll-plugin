@@ -56,7 +56,7 @@ return [
      * The routes to auto-load.
      */
     'routes' => [
-        // 'AgreablePollPlugin' => __DIR__ . '/app/routes.php'
+        'AgreablePollPlugin' => __DIR__ . '/app/routes.php'
     ],
 
     /**
