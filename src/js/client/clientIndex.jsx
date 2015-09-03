@@ -1,4 +1,6 @@
 /** React.DOM */
+require('../../stylus/main.styl')
+
 window.__bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
 window.React = require('react/addons');
