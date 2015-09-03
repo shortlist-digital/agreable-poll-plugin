@@ -1,60 +1,44 @@
 var nib = require('nib')
 var path = require('path')
+var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
-var buildPath = path.resolve(__dirname, 'resources', 'assets');
-var mainAdminPath = path.resolve(__dirname, 'src', 'admin.js');
-var mainPath = path.resolve(__dirname, 'src', 'main.js');
+var outputPath = path.resolve(__dirname, 'resources', 'assets');
+var adminPath = path.resolve(__dirname, 'src', 'admin.js');
+var clientPath = path.resolve(__dirname, 'src/js/client', 'clientIndex.jsx');
 
 module.exports = [{
-  entry: mainAdminPath,
-  output: {
-    path: buildPath,
-    filename: 'admin.js'
+  entry: {
+    admin     : adminPath,
+    client    : clientPath
   },
-  module: {
-    loaders: [
-      { test: /\.js$/, exclude:'node_modules', loader: 'babel' }
-    ]
-  },
-
-  plugins: [
-  ],
-
-  resolve: {
-    context: __dirname,
-    extensions: ['','.js', '.json'],
-    modulesDirectories: [
-      'widgets', 'javascripts', 'web_modules', 'node_modules'
-    ]
-  }
-
-},{
-  entry: mainPath,
   output: {
-    path: buildPath,
-    filename: 'app.js'
+    path: outputPath,
+    filename: '[name].js'
   },
   module: {
     loaders: [
       { test: /\.styl$/, loader: ExtractTextPlugin.extract("style", "css!stylus")},
-      { test: /\.js$/, exclude:'node_modules', loader: 'babel' },
+      { test: /\.jsx$|\.js$/, loader: 'babel' },
+      { test: /reactfire/, loader: "react-proxy", loader: "imports?this=>window" }
     ]
   },
 
   plugins: [
-    new ExtractTextPlugin('styles.css')
+    new ExtractTextPlugin('styles.css'),
+    new webpack.optimize.UglifyJsPlugin({minimize:true})
   ],
 
   resolve: {
     context: __dirname,
-    extensions: ['','.js', '.json', '.styl'],
+    extensions: ['','.js', '.json', '.jsx', '.styl'],
     modulesDirectories: [
-      'widgets', 'javascripts', 'web_modules', 'style-atoms', 'node_modules'
+      'widgets', 'javascripts', 'web_modules', 'node_modules'
     ]
   },
 
   stylus: {
     use: [nib()]
   }
+
 }]
