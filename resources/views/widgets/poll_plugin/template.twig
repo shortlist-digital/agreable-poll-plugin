@@ -3,5 +3,11 @@
 {% endif %}
 {% set senti_user_id = fn('get_field', 'agreable_poll_plugin_settings_senti_user_id', 'option') %}
 
-<div class="senti-poll" data-firebase-id="{{ senti_user_id }}/{{poll.firebase_id}}"></div>
-<script src="https://cdn.firebase.com/js/client/2.2.0/firebase.js"></script>
+{% if widget and widget.contain %}
+<div class="container">
+{% endif %}
+  <div class="senti-poll" data-firebase-id="{{ senti_user_id }}/{{poll.firebase_id}}"></div>
+  <script src="https://cdn.firebase.com/js/client/2.2.0/firebase.js"></script>
+{% if widget and widget.contain %}
+</div>
+{% endif %}
