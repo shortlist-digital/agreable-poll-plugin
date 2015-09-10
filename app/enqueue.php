@@ -9,7 +9,7 @@ $enqueue->admin([
 ], 'footer');
 
 $enqueue->admin([
-  'as'     => 'adminJS',
+  'as'     => 'pollAdminJS',
   'src'    => Helper::assetUrl('admin.js'),
   'filter' => [ 'hook' => 'edit.php' ]
 ], 'footer');
