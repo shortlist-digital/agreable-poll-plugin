@@ -30,7 +30,7 @@ var AnswerBar = React.createClass({
   _labelStyle: {
     fontSize: '18px',
     fontWeight: '100',
-    color: 'black'
+    color: ''
   },
 
   _brandBackground: function() {
@@ -55,7 +55,6 @@ var AnswerBar = React.createClass({
       width: p + '%',
       fontSize: "24px",
       lineHeight: "27px",
-      backgroundColor: "#eaeaea",
       transition: "all 1s ease-out"
     };
     var brandStyle = {
@@ -64,19 +63,16 @@ var AnswerBar = React.createClass({
       transition: "all 1s ease-out",
       height: '10px'
     };
-    var textStyle = {
-      color: this._brandBackground()
-    }
     return (
       <div style={{marginBottom:'20px'}}>
         <div className="senti-poll-progress" style={this._progressStyle}>
           <div className="senti-poll-progress-bar" role="progressbar" aria-valuenow="{p}" aria-valuemin="0" aria-valuemax="100" style={prefixr(barStyle)}>
-            <div className="senti-poll-progress-text" style={textStyle}>{p}%</div>
+            <div className="senti-poll-progress-text">{p}%</div>
           </div>
           <div className="senti-poll-brand-bar" style={prefixr(brandStyle)}>
           </div>
         </div>
-        <span style={this._labelStyle}>{this.props.text}</span>
+        <span className="senti-poll-option">{this.props.text}</span>
         <br/>
       </div>
     );
