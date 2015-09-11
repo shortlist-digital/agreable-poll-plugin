@@ -134,6 +134,11 @@ class SavePost {
       // Insert object contains firebase id.
       $returnJSON = json_decode($return);
       update_field('agreable_poll_definition_firebase_id', $returnJSON->name, $post_id);
+
+      $post_answers = $_POST['acf']['agreable_poll_definition_answers'];
+      for($i=0; $i < count($post_answers); $i++){
+        update_post_meta($post_id, "poll_answers_{$i}_answer_index", $i);
+      }
     }
 
   }

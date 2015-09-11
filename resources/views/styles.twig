@@ -8,10 +8,25 @@
         Overrides values in common CSS.
     #}
     .btn.senti-poll-vote-button {
-      background-color: {{ plugin_settings_property_primary_colour|default('ff00ff') }};
-      color: {{ plugin_settings_property_secondary_colour|default('black') }};
+      background-color: {{ plugin_settings_property_secondary_colour|default('#ff00ff') }};
+      color: {{ plugin_settings_property_primary_colour|default('#000') }};
+      {% if plugin_settings_property_font_family %}
       font-family: {{ plugin_settings_property_font_family }};
+      {% endif %}
     }
+
+    .senti-poll-bfc {
+      background-color: {{ plugin_settings_property_primary_colour|default('#000') }};
+    }
+
+    .senti-poll-progress-bar {
+      background-color: {{ plugin_settings_property_primary_colour|default('#000') }};
+    }
+
+    .senti-poll-progress-text {
+      color: {{ plugin_settings_property_secondary_colour|default('#000') }};
+    }
+
 
     {# Free text CSS also provided through WP settings panel. #}
     {{ plugin_settings_free_text }}
