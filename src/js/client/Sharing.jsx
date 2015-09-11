@@ -38,7 +38,7 @@ var Sharing = React.createClass({
         <div className="senti-poll-bfc"></div>
         <div className="senti-poll-sharing-content">
           <div className="senti-poll-quote">
-            “<em>{this.props.question} I voted for <span className="senti-poll-black-bold">{this.state.text}</span></em>”
+            “<em>{this.props.question} I voted for <span className="senti-poll-bold">{this.state.text}</span></em>”
           </div>
           <div className="senti-poll-share-row">
             <FacebookButton share={this._registerShare} question={this.props.question} {...this.state} />
