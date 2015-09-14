@@ -11,7 +11,7 @@ var FacebookButton = React.createClass({
     }(document, 'script', 'facebook-jssdk'));
     window.fbAsyncInit = function() {
       FB.init({
-        appId      : '854565077900307',
+        appId      : FB_APP_ID,
         cookie     : true,  // enable cookies to allow the server to access
                           // the session
         xfbml      : true,  // parse social plugins on this page
@@ -38,7 +38,7 @@ var FacebookButton = React.createClass({
 
   render: function() {
     return (
-      <button 
+      <button
         className="senti-poll-sharing-button senti-poll-sharing-facebook btn"
         onClick={this._doShare}
       >

@@ -146,6 +146,28 @@ register_field_group(array (
       'readonly' => 0,
       'disabled' => 0,
     ),
+    array (
+      'key' => $ns.'_plugin_field_'.$ns.'_facebook_app_id',
+      'label' => 'Facebook App ID',
+      'name' => $ns.'_plugin_settings_property_facebook_app_id',
+      'prefix' => '',
+      'type' => 'text',
+      'instructions' => 'If not present then plugin will use JavaScript variable \'FB_APP_ID\' which is set in parent theme. ',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      'maxlength' => '',
+      'readonly' => 0,
+      'disabled' => 0,
+    ),
   ),
   'location' => array (
     array (

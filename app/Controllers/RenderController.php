@@ -57,6 +57,23 @@ HTML;
 
     // Enqueue scripts.
     wp_enqueue_script( 'agreable_poll_script', Helper::assetUrl('client.js'), array(), '1.0.0', true );
+
+    $this->render_js_vars();
+
+  }
+
+  public function render_js_vars(){
+
+    $ns = Helper::get('agreable_namespace');
+    $facebook_app_id = get_field($ns.'_plugin_settings_property_facebook_app_id', 'option');
+
+    echo "<script>";
+    if(!empty($facebook_app_id)){
+      // Rendered by plugin. Overrides theme FB_APP_ID if present.
+      echo "var FB_APP_ID = '$facebook_app_id';";
+    }
+    echo "</script>";
+
   }
 
   /*
@@ -88,6 +105,7 @@ HTML;
    */
   public function inline_js(){
 
+    $this->render_js_vars();
     $js = file_get_contents(Helper::asset('client.js'));
     echo view('@AgreablePollPlugin/scripts.twig', [
         'js_path'   => Helper::asset('client.js'),
