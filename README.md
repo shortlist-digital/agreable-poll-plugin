@@ -57,3 +57,9 @@ array (
 ),
 ```
 Note: If `acf_add_options_sub_page` is given 'menu_title' of 'Quiz Settings', the location 'value' is 'acf-options-quiz-settings' (as above).
+
+#### Deploying to Packagist
+
+`git tag` to see the latest tag version (pull first.
+`git tag 0.x.x` to bump the version
+`git push origin master --tags` to push to GitHub with your latest tag - Packagist will recieve a webhook and update accordingly
