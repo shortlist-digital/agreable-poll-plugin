@@ -115,8 +115,8 @@ class Admin {
     }
 
     // include_once "FirebaseToken.php";
-    $token_generator = new \Services_FirebaseTokenGenerator($secret);
-    $token = $token_generator->createToken(array("uid" => $user));
+    $token_generator = new TokenGenerator($secret);
+    $token = $token_generator->setData(array("uid" => $user))->create();
     $_SESSION['firebase_token'] = serialize(array(
       'ttl' => time()+(60*60*24),
       'token' => $token
