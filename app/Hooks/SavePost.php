@@ -26,7 +26,7 @@ class SavePost {
 
     if(
       $post_id == 'options' ||
-      $post->post_type !== 'poll' ||
+      !isset($post->post_type) || $post->post_type !== 'poll' ||
       isset($_POST['acf']) === false ){
       return;
     }
@@ -87,7 +87,7 @@ class SavePost {
     $post = get_post( $post_id );
     if(
       $post_id == 'options' ||
-      $post->post_type !== 'poll' ||
+      !isset($post->post_type) || $post->post_type !== 'poll' ||
       isset($_POST['acf']) === false ){
       return;
     }
